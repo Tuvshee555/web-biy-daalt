@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Your Cart | TOM PIGEON</title>
+
+    <!-- Icons & Fonts -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="style1.css" />
+
+    <style>
+      .cart-container {
+        max-width: 1000px;
+        margin: 80px auto;
+        padding: 0 20px;
+        font-family: Inter, sans-serif;
+      }
+
+      .cart-title {
+        font-size: 26px;
+        font-weight: 400;
+        margin-bottom: 40px;
+      }
+
+      .cart-header-row {
+        display: flex;
+        justify-content: space-between;
+        color: #777;
+        font-size: 12px;
+        letter-spacing: 1px;
+        margin-bottom: 15px;
+      }
+
+      .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 25px 0;
+        border-bottom: 1px solid #eee;
+      }
+
+      .cart-product {
+        display: flex;
+        align-items: center;
+        gap: 20px;
+        flex: 1;
+      }
+
+      .cart-product img {
+        width: 120px;
+        height: 120px;
+        object-fit: cover;
+      }
+
+      .cart-product-info h4 {
+        font-size: 15px;
+        font-weight: 400;
+        color: #111;
+      }
+
+      .cart-product-info p {
+        font-size: 14px;
+        color: #777;
+        margin-top: 5px;
+      }
+
+      .cart-qty {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+
+      .qty-box {
+        display: flex;
+        align-items: center;
+        border: 1px solid #aaa;
+        height: 42px;
+        width: 130px;
+        justify-content: space-between;
+        padding: 0 12px;
+      }
+
+      .qty-btn {
+        font-size: 20px;
+        cursor: pointer;
+      }
+
+      .trash-btn {
+        font-size: 15px;
+        color: #777;
+        cursor: pointer;
+        margin-left: 10px;
+      }
+
+      .cart-total {
+        display: flex;
+        justify-content: flex-end;
+        padding-top: 40px;
+      }
+
+      .total-box {
+        width: 350px;
+        text-align: right;
+      }
+
+      .total-box p {
+        margin-bottom: 5px;
+        color: #333;
+      }
+
+      .total-amount {
+        font-size: 18px;
+        font-weight: bold;
+        margin-bottom: 20px;
+      }
+
+      .checkout-btn,
+      .shop-btn {
+        width: 100%;
+        padding: 15px 0;
+        border: none;
+        cursor: pointer;
+        font-size: 15px;
+        margin-top: 10px;
+      }
+
+      .checkout-btn {
+        background: #cbd3d3;
+      }
+
+      .shop-btn {
+        background: #5b42ff;
+        color: white;
+      }
+
+      .continue-shopping {
+        text-align: right;
+        margin-bottom: 20px;
+      }
+
+      .continue-shopping a {
+        color: #444;
+        font-size: 14px;
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+
+  <body>
+    <!-- HEADER -->
+    <header>
+      <div class="utility-buttons">
+        <button class="btn" id="search-btn">
+          <i class="fas fa-search"></i>
+        </button>
+      </div>
+
+      <div class="logo">
+        <h1>TOM PIGEON</h1>
+        <nav>
+          <a href="/jewellery.html">Jewellery</a>
+          <a href="/stationery.html">Stationery</a>
+          <a href="/prints.html">Prints</a>
+          <a href="/giftcards.html">Gift Cards</a>
+          <a href="/collaborations.html">Collaborations</a>
+        </nav>
+      </div>
+
+      <div class="utility-buttons">
+        <a href="/cart.html" class="btn" id="cart-btn">
+          <i class="fas fa-shopping-bag"></i>
+        </a>
+
+        <button class="btn" id="user-btn"><i class="far fa-user"></i></button>
+      </div>
+    </header>
+
+    <!-- CART PAGE -->
+    <section class="cart-container">
+      <div class="continue-shopping">
+        <a href="/index.html">Continue shopping</a>
+      </div>
+
+      <h1 class="cart-title">Your cart</h1>
+
+      <div class="cart-header-row">
+        <span>PRODUCT</span>
+        <span>QUANTITY</span>
+        <span>TOTAL</span>
+      </div>
+
+      <!-- ITEM 1 -->
+      <div class="cart-item">
+        <div class="cart-product">
+          <img src="/public/cart1.webp" />
+          <div class="cart-product-info">
+            <h4>Adder Necklace Black</h4>
+            <p>264,000 ₮</p>
+          </div>
+        </div>
+
+        <div class="cart-qty">
+          <div class="qty-box">
+            <span class="qty-btn">−</span>
+            <span>2</span>
+            <span class="qty-btn">+</span>
+          </div>
+
+          <i class="fas fa-trash trash-btn"></i>
+        </div>
+
+        <div class="cart-total-price">528,000 ₮</div>
+      </div>
+
+      <!-- ITEM 2 -->
+      <div class="cart-item">
+        <div class="cart-product">
+          <img src="/public/cart2.avif" />
+          <div class="cart-product-info">
+            <h4>Scatter Card Brass & Sky</h4>
+            <p>17,000 ₮</p>
+          </div>
+        </div>
+
+        <div class="cart-qty">
+          <div class="qty-box">
+            <span class="qty-btn">−</span>
+            <span>3</span>
+            <span class="qty-btn">+</span>
+          </div>
+
+          <i class="fas fa-trash trash-btn"></i>
+        </div>
+
+        <div class="cart-total-price">51,000 ₮</div>
+      </div>
+
+      <!-- TOTAL BOX -->
+      <div class="cart-total">
+        <div class="total-box">
+          <p class="total-amount">Estimated total 579,000 MNT</p>
+          <p style="color: #777; font-size: 12px">
+            Tax included and shipping and discounts calculated at checkout
+          </p>
+
+          <a
+            style="display: block; text-align: center; text-decoration: none"
+            href="checkout.html"
+            class="checkout-btn"
+            >Check out</a
+          >
+          <a
+            href="shop.html"
+            class="shop-btn"
+            style="display: block; text-align: center; text-decoration: none"
+          >
+            shop
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER -->
+    <section class="newsletter">
+      <h2>Newsletter</h2>
+      <p>Join The Pigeon Club... get 10% off every order!</p>
+      <form>
+        <input type="email" placeholder="Email" required />
+        <button type="submit">→</button>
+      </form>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-column">
+        <h3>Information</h3>
+        <a href="about.html">About Us</a>
+        <a href="buying-guide.html">Buying Guide</a>
+        <a href="product-care.html">Our Products</a>
+        <a href="wholesale.html">Wholesale</a>
+        <a href="commissions.html">Commissions</a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Follow</h3>
+        <a href="#"><u>Facebook</u></a>
+        <a href="#"><u>Instagram</u></a>
+        <a href="#"><u>Pinterest</u></a>
+        <a href="#"><u>Kirsty Tanner</u></a>
+      </div>
+
+      <div class="footer-column">
+        <h3>Contact</h3>
+        <p>
+          Do you have a question?<br />Please don't hesitate to
+          <a href="contact.html"><u>get in touch.</u></a>
+        </p>
+      </div>
+    </footer>
+
+    <div class="copyright">
+      <span class="copyright_txt">Copyright ©2024. All rights reserved.</span
+      ><br />
+      <span class="cpr_txt">Site by The Printer's Son</span>
+    </div>
+  </body>
+</html>

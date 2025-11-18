@@ -26,7 +26,6 @@ setInterval(changeBackground, 2500);
   const prevBtn = dotsWrap.querySelector(".prev");
   const nextBtn = dotsWrap.querySelector(".next");
 
-  // Insert dots between prev and next
   slides.forEach((_, i) => {
     const d = document.createElement("div");
     d.className = "slider-dot" + (i === 0 ? " active" : "");

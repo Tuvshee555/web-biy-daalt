@@ -1,0 +1,510 @@
+<!-- Tom Pigeon Checkout Clone - Full Layout Begins -->
+<!-- I will now insert the full real checkout UI HTML/CSS replicated pixel-accurate -->
+
+<style>
+  /* GLOBAL */
+  body {
+    margin: 0;
+    font-family: Inter, sans-serif;
+    background: #fff;
+    color: #222;
+  }
+
+  .checkout-container {
+    display: flex;
+    width: 100%;
+  }
+
+  /* LEFT SIDE */
+  .left {
+    flex: 1;
+    padding: 40px 80px;
+    width: 50%;
+  }
+
+  h1 {
+    font-size: 26px;
+    font-weight: 500;
+    margin: 40px 0 20px;
+    text-align: center;
+  }
+
+  .express {
+    text-align: center;
+    margin-bottom: 10px;
+    color: #666;
+  }
+
+  .express-btn {
+    width: 240px;
+    margin: auto;
+    display: block;
+    background: #6e42ff;
+    padding: 14px 0;
+    color: white;
+    border-radius: 8px;
+    font-size: 18px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+  }
+
+  .or {
+    text-align: center;
+    color: #888;
+    margin: 25px 0;
+    font-size: 14px;
+    font-weight: 500;
+  }
+
+  .section-title {
+    margin: 40px 0 10px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 14px;
+    font-size: 15px;
+    border: 1px solid #d1d1d1;
+    border-radius: 6px;
+    /* margin-bottom: 14px; */
+  }
+
+  .row {
+    display: flex;
+    justify-content: space-between;
+    gap: 14px;
+  }
+
+  label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 14px;
+    margin-top: -5px;
+  }
+
+  /* SHIPPING method */
+  .shipping-option {
+    border: 1px solid #d1d1d1;
+    padding: 16px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 15px;
+    margin-top: 10px;
+    background: #f8faff;
+    border-left: 3px solid #3b6cff;
+  }
+
+  /* PAYMENT */
+  .payment-box {
+    border: 1px solid #d1d1d1;
+    border-radius: 8px;
+    padding: 14px;
+    margin-top: 10px;
+  }
+
+  .payment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px;
+    background: #eef3ff;
+    border-radius: 8px 8px 0 0;
+    border-bottom: 1px solid #d1d1d1;
+  }
+
+  .pay-now {
+    background: #0066ff;
+    width: 100%;
+    padding: 18px 0;
+    font-size: 18px;
+    margin-top: 25px;
+    border-radius: 8px;
+    border: none;
+    font-weight: 600;
+    cursor: pointer;
+    color: white;
+  }
+
+  /* RIGHT SIDE SUMMARY */
+  .right {
+    width: 700px;
+    /* width: 50%; */
+
+    background: #fafafa;
+    border-left: 1px solid #eee;
+    padding: 50px 40px;
+    height: 1500px;
+    overflow-y: auto;
+  }
+
+  .summary-item {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 22px;
+  }
+
+  .summary-item img {
+    width: 62px;
+    height: 62px;
+    border-radius: 8px;
+  }
+
+  .qty {
+    background: black;
+    color: white;
+    font-size: 12px;
+    padding: 2px 6px;
+    border-radius: 50%;
+    position: relative;
+    top: -20px;
+    left: -20px;
+  }
+
+  .summary-text {
+    font-size: 14px;
+  }
+
+  .total {
+    font-size: 26px;
+    font-weight: 700;
+    margin-top: 25px;
+  }
+
+  /* HEADER SHOPPING BAG */
+  .header-icon {
+    position: absolute;
+    top: 32px;
+    right: 40px;
+  }
+
+  .header-icon img {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* CREDIT CARD SECTION EXACT LOOK */
+  .payment-box {
+    border: 1px solid #c9d6ff;
+    border-radius: 10px;
+    overflow: hidden;
+    padding: 0;
+    background: #fff;
+  }
+
+  .payment-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px;
+    background: #f3f6ff;
+    border-bottom: 1px solid #d0dafc;
+  }
+
+  .payment-header span {
+    font-weight: 600;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-icons {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+
+  .card-icons img {
+    width: 36px;
+    height: auto;
+  }
+
+  .more-cards {
+    background: #f1f3f5;
+    border: 1px solid #ccc;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 500;
+  }
+
+  /* PAYMENT INPUT BOXES EXACT */
+  .pay-input {
+    border-radius: 8px;
+    border: 1px solid #cfd3dc;
+    /* padding: 14px; */
+    margin-bottom: 8px;
+    font-size: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+
+  .pay-input input {
+    border: none;
+    width: 100%;
+    outline: none;
+    font-size: 15px;
+  }
+
+  .pay-input .icon-lock,
+  .pay-input .icon-question {
+    opacity: 0.6;
+    font-size: 18px;
+  }
+
+  /* KLARNA BOX */
+  .klarna-box {
+    border: 1px solid #ddd;
+    padding: 14px;
+    border-radius: 14px;
+    margin-top: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 15px;
+  }
+
+  .klarna-logo {
+    background: #ffcfe7;
+    padding: 4px 10px;
+    border-radius: 6px;
+    font-size: 13px;
+    font-weight: 600;
+  }
+
+  /* REMEMBER ME EXACT */
+  .remember-box {
+    border: 1px solid #ddd;
+    padding: 16px;
+    border-radius: 10px;
+    margin-top: 10px;
+    background: #fff;
+  }
+
+  .remember-box input {
+    margin-right: 6px;
+  }
+
+  .remember-phone {
+    margin-top: 10px;
+    border: 1px solid #ddd;
+    padding: 14px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    font-size: 15px;
+  }
+
+  .fields-group {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+  }
+
+  .remember-phone img {
+    width: 18px;
+    opacity: 0.7;
+  }
+  .cart2 {
+    padding: 20px;
+  }
+  .input2 {
+    display: flex;
+    height: 20px;
+    align-items: start;
+  }
+  .bruh {
+    font-size: small;
+  }
+  .checkout-header {
+    width: 100%;
+    padding: 28px 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background: #fff;
+    border-bottom: 1px solid #e5e5e5;
+  }
+
+  .header-center {
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: -0.3px;
+    margin: auto;
+  }
+
+  .header-icon {
+    position: absolute;
+    right: 40px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+
+  .header-icon img {
+    width: 28px;
+    height: 28px;
+    opacity: 0.85;
+    cursor: pointer;
+  }
+</style>
+<div class="checkout-header">
+  <a href="jewellery.html" class="header-center">Tom Pigeon</a>
+  <div class="header-icon">
+    <img
+      src="https://cdn-icons-png.flaticon.com/512/3144/3144456.png"
+      alt="cart"
+    />
+  </div>
+</div>
+
+<div class="checkout-container">
+  <div class="left">
+    <h1>Tom Pigeon</h1>
+
+    <p class="express">Express checkout</p>
+    <button class="express-btn">shop</button>
+
+    <div class="or">OR</div>
+
+    <div class="section-title">Contact</div>
+    <input type="email" placeholder="Email" />
+    <label></label>
+
+    <div class="fields-group">
+      <div class="section-title">Delivery</div>
+      <select>
+        <option>Mongolia</option>
+      </select>
+      <div class="row">
+        <input type="text" placeholder="First name" />
+        <input type="text" placeholder="Last name" />
+      </div>
+
+      <input type="text" placeholder="Company (optional)" />
+      <input type="text" placeholder="Address" />
+      <input type="text" placeholder="Apartment, suite, etc. (optional)" />
+
+      <div class="row">
+        <input type="text" placeholder="City" />
+        <input type="text" placeholder="Postal code (optional)" />
+      </div>
+
+      <input type="text" placeholder="Phone" />
+    </div>
+
+    <div class="section-title">Shipping method</div>
+    <div class="shipping-option">
+      <span>International Shipping 3</span><strong>₮96,000.00</strong>
+    </div>
+
+    <div class="section-title">Payment</div>
+    <p>All transactions are secure and encrypted.</p>
+
+    <div class="payment-box">
+      <div class="payment-header">
+        <span
+          ><div
+            style="
+              width: 13px;
+              height: 13px;
+              border: 2px solid #1a73e8;
+              border-radius: 50%;
+              background: #1a73e8;
+              margin-right: 6px;
+            "
+          ></div>
+          Credit card</span
+        >
+        <div class="card-icons">
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/4/41/Visa_Logo.png"
+          />
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/0/04/Mastercard-logo.png"
+          />
+          <div class="more-cards">+5</div>
+        </div>
+      </div>
+
+      <div class="cart2">
+        <div class="pay-input">
+          <input type="text" placeholder="Card number" /><span class="icon-lock"
+            >🔒</span
+          >
+        </div>
+
+        <div class="row">
+          <div class="pay-input">
+            <input type="text" placeholder="Expiration date (MM / YY)" />
+          </div>
+          <div class="pay-input">
+            <input type="text" placeholder="Security code" /><span
+              class="icon-question"
+              >❔</span
+            >
+          </div>
+        </div>
+
+        <div class="pay-input">
+          <input type="text" placeholder="Name on card" />
+        </div>
+        <!-- 
+        <div class="input2">
+          <input type="checkbox" />
+          <p class="bruh">Use shipping address as billing address</p>
+        </div> -->
+
+        <div class="klarna-box">
+          <span>
+            <!-- <input type="radio" /> -->
+            Klarna - Flexible payments</span
+          >
+          <span class="klarna-logo">Klarna</span>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-title">Remember me</div>
+
+    <!-- <label> Save my information</label> -->
+    <input type="text" placeholder="Mobile phone number +976" />
+
+    <button class="pay-now">Pay now</button>
+  </div>
+
+  <div class="right">
+    <div class="summary-item">
+      <img src="/public/unfazed.webp" />
+      <span class="qty">2</span>
+      <div class="summary-text">
+        Adder Necklace Black<br /><strong>₮528,000.00</strong>
+      </div>
+    </div>
+
+    <div class="summary-item">
+      <img src="/public/unfazed3.avif" />
+      <span class="qty">3</span>
+      <div class="summary-text">
+        Scatter Card Brass & Sky<br /><strong>₮51,000.00</strong>
+      </div>
+    </div>
+
+    <p>Subtotal · 5 items — ₮579,000.00</p>
+    <p>Shipping — ₮96,000.00</p>
+
+    <div class="total">₮675,000.00</div>
+  </div>
+</div>
+<!-- I'll recreate the layout and styles closely matching Tom Pigeon's real checkout design -->
