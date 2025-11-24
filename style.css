@@ -137,19 +137,17 @@
       /* Track holding slides */
       .carousel-track {
         display: flex;
-        transition: transform 0.5s ease-in-out; /* sliding animation */
+        transition: transform 0.5s ease-in-out;
         height: 100%;
       }
 
-      /* Each slide */
       .carousel-track img {
         width: 100%;
-        flex-shrink: 0; /* important to keep width */
+        flex-shrink: 0; 
         object-fit: cover;
         height: 100%;
       }
 
-      /* Button stays as is */
       .back .del {
         position: absolute;
         bottom: 200px;
